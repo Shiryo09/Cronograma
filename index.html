@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronograma Semanal - IFRN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-container">
+    
+    <!-- Barra superior de ferramentas e personalização de cores -->
+    <header class="top-controls no-print">
+      <div class="controls-left">
+        <span class="control-label">🎨 Paleta dos Horários e Cabeçalho:</span>
+        <div class="theme-buttons">
+          <button type="button" class="btn-theme active" data-theme="slate" title="Slate Escuro Moderno">Slate Moderno</button>
+          <button type="button" class="btn-theme" data-theme="ifrn" title="Verde Padrão IF">Verde IF</button>
+          <button type="button" class="btn-theme" data-theme="petroleo" title="Azul Petróleo">Azul Petróleo</button>
+          <button type="button" class="btn-theme" data-theme="indigo" title="Índigo Suave">Índigo</button>
+          <button type="button" class="btn-theme" data-theme="vinho" title="Bordô">Bordô</button>
+        </div>
+      </div>
+      <div class="controls-right">
+        <label class="custom-color-picker" title="Escolha qualquer cor para a coluna de horários">
+          <span>Cor personalizada dos horários:</span>
+          <input type="color" id="horariosColorPicker" value="#1e293b">
+        </label>
+        <button type="button" class="btn-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      </div>
+    </header>
+
+    <!-- Cabeçalho Principal do Cronograma -->
+    <header class="schedule-header">
+      <div class="main-title-bar">
+        <h1>CRONOGRAMA SEMANAL</h1>
+      </div>
+      <div class="user-badge-card">
+        <div class="student-name">Cronograma Semanal de Éberton Marinho</div>
+        <div class="schedule-date">29/05/2023</div>
+      </div>
+    </header>
+
+    <!-- Tabela do Cronograma -->
+    <div class="table-wrapper">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th class="col-time-head">Horários</th>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 6:00-7:00 -->
+          <tr>
+            <th class="time-col">6:00-7:00</th>
+            <td class="cell-routine">
+              <ul class="routine-list">
+                <li>Tomar Banho</li>
+                <li>Se arrumar</li>
+                <li>Tomar café da manhã</li>
+                <li>Ir para o IFRN</li>
+              </ul>
+            </td>
+            <td class="cell-routine">
+              <ul class="routine-list">
+                <li>Tomar Banho</li>
+                <li>Se arrumar</li>
+                <li>Tomar café da manhã</li>
+                <li>Ir para o IFRN</li>
+              </ul>
+            </td>
+            <td class="cell-routine">
+              <ul class="routine-list">
+                <li>Tomar Banho</li>
+                <li>Se arrumar</li>
+                <li>Tomar café da manhã</li>
+                <li>Ir para o IFRN</li>
+              </ul>
+            </td>
+            <td class="cell-routine">
+              <ul class="routine-list">
+                <li>Tomar Banho</li>
+                <li>Se arrumar</li>
+                <li>Tomar café da manhã</li>
+                <li>Ir para o IFRN</li>
+              </ul>
+            </td>
+            <td class="cell-routine">
+              <ul class="routine-list">
+                <li>Tomar Banho</li>
+                <li>Se arrumar</li>
+                <li>Tomar café da manhã</li>
+                <li>Ir para o IFRN</li>
+              </ul>
+            </td>
+            <td rowspan="3" class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td rowspan="5" class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 7:00-7:45 -->
+          <tr>
+            <th class="time-col">7:00-7:45</th>
+            <td rowspan="2" class="cell-biologia">
+              <div class="cell-content">
+                <span class="activity-title">Biologia I</span>
+                <span class="teacher-tag">(Leandro)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-computadores">
+              <div class="cell-content">
+                <span class="activity-title">Org. e Manut. Computadores</span>
+                <span class="teacher-tag">(Evantuy)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-matematica">
+              <div class="cell-content">
+                <span class="activity-title">Matemática III</span>
+                <span class="teacher-tag">(Alysson)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-redes">
+              <div class="cell-content">
+                <span class="activity-title">Arq. De Redes de Computadores</span>
+                <span class="teacher-tag">(Igor)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-filosofia">
+              <div class="cell-content">
+                <span class="activity-title">Filosofia III</span>
+                <span class="teacher-tag">(Ivickson)</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 7:45-8:30 -->
+          <tr>
+            <th class="time-col">7:45-8:30</th>
+          </tr>
+
+          <!-- 8:30-8:50 (INTERVALO) -->
+          <tr class="interval-row">
+            <th class="time-col">8:30-8:50</th>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-morning">
+              <div class="cell-content">
+                <span class="activity-title">Acordar e tomar café da Manhã</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 8:50-9:35 -->
+          <tr>
+            <th class="time-col">8:50-9:35</th>
+            <td class="cell-biologia">
+              <div class="cell-content">
+                <span class="activity-title">Biologia I</span>
+                <span class="teacher-tag">(Leandro)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-quimica">
+              <div class="cell-content">
+                <span class="activity-title">Química I</span>
+                <span class="teacher-tag">(Saulo)</span>
+              </div>
+            </td>
+            <td class="cell-matematica">
+              <div class="cell-content">
+                <span class="activity-title">Matemática III</span>
+                <span class="teacher-tag">(Alysson)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-quimica">
+              <div class="cell-content">
+                <span class="activity-title">Química I</span>
+                <span class="teacher-tag">(Saulo)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-redes">
+              <div class="cell-content">
+                <span class="activity-title">Arq. De Redes de Computadores</span>
+                <span class="teacher-tag">(Igor)</span>
+              </div>
+            </td>
+            <td rowspan="13" class="cell-lazer">
+              <div class="cell-content full-center">
+                <span class="activity-title-xl">Lazer</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 9:35-10:20 -->
+          <tr>
+            <th class="time-col">9:35-10:20</th>
+            <td class="cell-prog">
+              <div class="cell-content">
+                <span class="activity-title">Prog. Com Acesso a BD</span>
+                <span class="teacher-tag">(Edson Aníbal)</span>
+              </div>
+            </td>
+            <td class="cell-portugues">
+              <div class="cell-content">
+                <span class="activity-title">Língua Portuguesa III</span>
+                <span class="teacher-tag">(Andrea)</span>
+              </div>
+            </td>
+            <td class="cell-morning">
+              <div class="cell-content">
+                <span class="activity-title">Acordar e tomar café da Manhã</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 10:20-10:30 (INTERVALO) -->
+          <tr class="interval-row">
+            <th class="time-col">10:20-10:30</th>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-intervalo">INTERVALO</td>
+            <td class="cell-study">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Biologia I</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 10:30-11:15 -->
+          <tr>
+            <th class="time-col">10:30-11:15</th>
+            <td rowspan="2" class="cell-prog">
+              <div class="cell-content">
+                <span class="activity-title">Prog. Com Acesso a BD</span>
+                <span class="teacher-tag">(Edson Aníbal)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-computadores">
+              <div class="cell-content">
+                <span class="activity-title">Org. e Manut. Computadores</span>
+                <span class="teacher-tag">(Evantuy)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-autoria">
+              <div class="cell-content">
+                <span class="activity-title">Autoria Web</span>
+                <span class="teacher-tag">(Éberton)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-portugues">
+              <div class="cell-content">
+                <span class="activity-title">Língua Portuguesa III</span>
+                <span class="teacher-tag">(Andrea)</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-historia">
+              <div class="cell-content">
+                <span class="activity-title">História I</span>
+                <span class="teacher-tag">(Giulia)</span>
+              </div>
+            </td>
+            <td class="cell-study">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Química I</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 11:15-12:00 -->
+          <tr>
+            <th class="time-col">11:15-12:00</th>
+            <td class="cell-historia">
+              <div class="cell-content">
+                <span class="activity-title">História I</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 12:00-13:00 -->
+          <tr>
+            <th class="time-col">12:00-13:00</th>
+            <td class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Almoço</span>
+              </div>
+            </td>
+            <td class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Almoço</span>
+              </div>
+            </td>
+            <td class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Almoço</span>
+              </div>
+            </td>
+            <td class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Almoço</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Retorno para Casa e Almoço</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Almoço</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 13:00-14:00 -->
+          <tr>
+            <th class="time-col">13:00-14:00</th>
+            <td class="cell-study-alt">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Português</span>
+              </div>
+            </td>
+            <td class="cell-empty"></td>
+            <td class="cell-empty"></td>
+            <td class="cell-empty"></td>
+          </tr>
+
+          <!-- 14:00-15:00 -->
+          <tr>
+            <th class="time-col">14:00-15:00</th>
+            <td rowspan="2" class="cell-portugues">
+              <div class="cell-content">
+                <span class="activity-title">CA de Português</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-sport">
+              <div class="cell-content">
+                <span class="activity-title">Natação</span>
+              </div>
+            </td>
+            <td class="cell-study">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Matemática</span>
+              </div>
+            </td>
+            <td rowspan="2" class="cell-sport">
+              <div class="cell-content">
+                <span class="activity-title">Natação</span>
+              </div>
+            </td>
+            <td class="cell-empty"></td>
+            <td class="cell-study">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Autoria Web</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 15:00-17:00 -->
+          <tr>
+            <th class="time-col">15:00-17:00</th>
+            <td class="cell-matematica">
+              <div class="cell-content">
+                <span class="activity-title">CA de Matemática</span>
+              </div>
+            </td>
+            <td class="cell-empty"></td>
+            <td class="cell-study">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Prog. Com BD</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 17:00-18:00 -->
+          <tr>
+            <th class="time-col">17:00-18:00</th>
+            <td class="cell-empty"></td>
+            <td class="cell-empty"></td>
+            <td class="cell-empty"></td>
+            <td class="cell-empty"></td>
+            <td class="cell-empty"></td>
+            <td class="cell-study">
+              <div class="cell-content">
+                <span class="activity-title">Estudar Redes</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 18:00-19:00 -->
+          <tr>
+            <th class="time-col">18:00-19:00</th>
+            <td class="cell-transit">
+              <div class="cell-content">
+                <span class="activity-title">Retorno para casa</span>
+              </div>
+            </td>
+            <td class="cell-transit">
+              <div class="cell-content">
+                <span class="activity-title">Retorno para casa</span>
+              </div>
+            </td>
+            <td class="cell-transit">
+              <div class="cell-content">
+                <span class="activity-title">Retorno para casa</span>
+              </div>
+            </td>
+            <td class="cell-transit">
+              <div class="cell-content">
+                <span class="activity-title">Retorno para casa</span>
+              </div>
+            </td>
+            <td class="cell-empty"></td>
+            <td rowspan="2" class="cell-meal">
+              <div class="cell-content">
+                <span class="activity-title">Jantar</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 19:00-21:00 -->
+          <tr>
+            <th class="time-col">19:00-21:00</th>
+            <td class="cell-leisure-evening">
+              <div class="cell-content">
+                <span class="activity-title">Jantar e folga</span>
+              </div>
+            </td>
+            <td class="cell-leisure-evening">
+              <div class="cell-content">
+                <span class="activity-title">Jantar e folga</span>
+              </div>
+            </td>
+            <td class="cell-leisure-evening">
+              <div class="cell-content">
+                <span class="activity-title">Jantar e folga</span>
+              </div>
+            </td>
+            <td class="cell-leisure-evening">
+              <div class="cell-content">
+                <span class="activity-title">Jantar e folga</span>
+              </div>
+            </td>
+            <td class="cell-empty"></td>
+          </tr>
+
+          <!-- 21:00-22:00 -->
+          <tr>
+            <th class="time-col">21:00-22:00</th>
+            <td class="cell-night-prep">
+              <div class="cell-content">
+                <span class="activity-title">Arrumar a mochila para terça</span>
+              </div>
+            </td>
+            <td class="cell-night-prep">
+              <div class="cell-content">
+                <span class="activity-title">Arrumar a mochila para quarta</span>
+              </div>
+            </td>
+            <td class="cell-night-prep">
+              <div class="cell-content">
+                <span class="activity-title">Arrumar a mochila para quinta</span>
+              </div>
+            </td>
+            <td class="cell-night-prep">
+              <div class="cell-content">
+                <span class="activity-title">Arrumar a mochila para sexta</span>
+              </div>
+            </td>
+            <td class="cell-empty"></td>
+            <td class="cell-night-prep">
+              <div class="cell-content">
+                <span class="activity-title">Arrumar a mochila para segunda</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- 22:00-6:00 -->
+          <tr>
+            <th class="time-col">22:00-6:00</th>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+            <td class="cell-sleep">
+              <div class="cell-content">
+                <span class="activity-title">Dormir</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Rodapé com Legenda -->
+    <footer class="schedule-legend no-print">
+      <div class="legend-title">Legenda de Cores:</div>
+      <div class="legend-items">
+        <span class="legend-tag legend-biologia">Biologia</span>
+        <span class="legend-tag legend-computadores">Org. e Manut. Computadores</span>
+        <span class="legend-tag legend-matematica">Matemática</span>
+        <span class="legend-tag legend-redes">Redes</span>
+        <span class="legend-tag legend-filosofia">Filosofia</span>
+        <span class="legend-tag legend-quimica">Química</span>
+        <span class="legend-tag legend-prog">Programação (BD)</span>
+        <span class="legend-tag legend-portugues">Português</span>
+        <span class="legend-tag legend-autoria">Autoria Web</span>
+        <span class="legend-tag legend-historia">História</span>
+        <span class="legend-tag legend-natacao">Natação</span>
+        <span class="legend-tag legend-rotina">Rotina & Estudos</span>
+        <span class="legend-tag legend-refeicao">Refeições</span>
+        <span class="legend-tag legend-lazer">Lazer / Descanso</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Paletas predefinidas para a cor dos horários e cabeçalhos
+    const themes = {
+      slate: {
+        timeBg: '#1e293b',
+        timeText: '#f8fafc',
+        headBg: '#0f172a',
+        accent: '#38bdf8'
+      },
+      ifrn: {
+        timeBg: '#14532d',
+        timeText: '#f0fdf4',
+        headBg: '#052e16',
+        accent: '#4ade80'
+      },
+      petroleo: {
+        timeBg: '#155e75',
+        timeText: '#ecfeff',
+        headBg: '#083344',
+        accent: '#22d3ee'
+      },
+      indigo: {
+        timeBg: '#3730a3',
+        timeText: '#eef2ff',
+        headBg: '#1e1b4b',
+        accent: '#818cf8'
+      },
+      vinho: {
+        timeBg: '#881337',
+        timeText: '#fff1f2',
+        headBg: '#4c0519',
+        accent: '#fb7185'
+      }
+    };
+
+    const root = document.documentElement;
+    const themeButtons = document.querySelectorAll('.btn-theme');
+    const colorPicker = document.getElementById('horariosColorPicker');
+
+    function applyTheme(themeKey) {
+      const theme = themes[themeKey];
+      if (!theme) return;
+      root.style.setProperty('--time-col-bg', theme.timeBg);
+      root.style.setProperty('--time-col-text', theme.timeText);
+      root.style.setProperty('--header-bg', theme.headBg);
+      root.style.setProperty('--accent-color', theme.accent);
+      colorPicker.value = theme.timeBg;
+
+      themeButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === themeKey);
+      });
+    }
+
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyTheme(btn.dataset.theme);
+      });
+    });
+
+    colorPicker.addEventListener('input', (e) => {
+      const chosenColor = e.target.value;
+      root.style.setProperty('--time-col-bg', chosenColor);
+      root.style.setProperty('--header-bg', chosenColor);
+      
+      // Remove destaque dos botões pré-definidos se customizado
+      themeButtons.forEach(btn => btn.classList.remove('active'));
+    });
+  </script>
+</body>
+</html>
+

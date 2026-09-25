@@ -1,0 +1,647 @@
+/* ==========================================================================
+   Cronograma Semanal - IFRN
+   Design Moderno, Harmonioso e Customizável
+   ========================================================================== */
+
+:root {
+  /* Cores Principais dos Horários e Cabeçalhos (Customizáveis) */
+  --time-col-bg: #1e293b;       /* Slate moderno para os horários (diferente do azul original) */
+  --time-col-text: #f8fafc;
+  --header-bg: #0f172a;         /* Fundo escuro elegante para o cabeçalho */
+  --header-text: #ffffff;
+  --accent-color: #38bdf8;
+  
+  /* Linhas e bordas */
+  --border-table: #cbd5e1;
+  --border-cell: #e2e8f0;
+  
+  /* Cores Harmoniosas para Atividades e Disciplinas */
+  /* Biologia */
+  --bio-bg: #dcfce7;
+  --bio-border: #86efac;
+  --bio-text: #14532d;
+
+  /* Org. e Manut. Computadores */
+  --comp-bg: #f1f5f9;
+  --comp-border: #cbd5e1;
+  --comp-text: #1e293b;
+
+  /* Matemática */
+  --mat-bg: #fef3c7;
+  --mat-border: #fde047;
+  --mat-text: #854d0e;
+
+  /* Redes de Computadores */
+  --redes-bg: #ede9fe;
+  --redes-border: #c4b5fd;
+  --redes-text: #4c1d95;
+
+  /* Filosofia */
+  --filo-bg: #fce7f3;
+  --filo-border: #fbcfe8;
+  --filo-text: #831843;
+
+  /* Química */
+  --quim-bg: #e0f2fe;
+  --quim-border: #7dd3fc;
+  --quim-text: #0369a1;
+
+  /* Prog. com BD */
+  --prog-bg: #dbeafe;
+  --prog-border: #93c5fd;
+  --prog-text: #1e40af;
+
+  /* Língua Portuguesa */
+  --port-bg: #fee2e2;
+  --port-border: #fca5a5;
+  --port-text: #991b1b;
+
+  /* Autoria Web */
+  --auto-bg: #ffedd5;
+  --auto-border: #fdba74;
+  --auto-text: #9a3412;
+
+  /* História */
+  --hist-bg: #fef08a;
+  --hist-border: #facc15;
+  --hist-text: #713f12;
+
+  /* Natação */
+  --nat-bg: #ccfbf1;
+  --nat-border: #5eead4;
+  --nat-text: #115e59;
+
+  /* Rotinas Matinais & Noite */
+  --routine-bg: #eff6ff;
+  --routine-border: #bfdbfe;
+  --routine-text: #1e3a8a;
+
+  /* Refeições (Almoço / Jantar) */
+  --meal-bg: #fffbeb;
+  --meal-border: #fde68a;
+  --meal-text: #92400e;
+
+  /* Lazer */
+  --lazer-bg: #ecfccb;
+  --lazer-border: #bef264;
+  --lazer-text: #365314;
+
+  /* Dormir */
+  --sleep-bg: #f8fafc;
+  --sleep-border: #e2e8f0;
+  --sleep-text: #475569;
+
+  /* Intervalo */
+  --interval-bg: #f8fafc;
+  --interval-border: #e2e8f0;
+  --interval-text: #94a3b8;
+
+  /* Estudos Extras */
+  --study-bg: #e0e7ff;
+  --study-border: #c7d2fe;
+  --study-text: #3730a3;
+
+  /* Trânsito / Retorno */
+  --transit-bg: #f3e8ff;
+  --transit-border: #d8b4fe;
+  --transit-text: #581c87;
+}
+
+/* Reset básico e tipografia */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.4;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+}
+
+/* Barra superior de controle e customização de cores */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 18px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.controls-left, .controls-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.control-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.theme-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-theme {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-theme:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-theme.active {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+.custom-color-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+}
+
+.custom-color-picker input[type="color"] {
+  border: 1px solid #cbd5e1;
+  width: 32px;
+  height: 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-print {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-print:hover {
+  background: #1d4ed8;
+}
+
+/* Cabeçalho do Cronograma */
+.schedule-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.main-title-bar {
+  background: var(--header-bg);
+  color: var(--header-text);
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.main-title-bar h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.user-badge-card {
+  align-self: flex-end;
+  background: var(--time-col-bg);
+  color: var(--time-col-text);
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-align: right;
+  min-width: 280px;
+  transition: background-color 0.3s ease;
+}
+
+.student-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.schedule-date {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* Tabela e Layout */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-table);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Cabeçalho da Tabela */
+.schedule-table thead th {
+  background: var(--time-col-bg);
+  color: var(--time-col-text);
+  padding: 10px 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.schedule-table thead th.col-time-head {
+  width: 95px;
+}
+
+/* Coluna de Horários (Destaque do Pedido do Usuário) */
+.schedule-table tbody th.time-col {
+  background: var(--time-col-bg);
+  color: var(--time-col-text);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 8px 4px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.3px;
+  transition: background-color 0.3s ease;
+}
+
+/* Células e Estrutura Geral */
+.schedule-table td {
+  border: 1px solid var(--border-cell);
+  padding: 6px 4px;
+  vertical-align: middle;
+  transition: background-color 0.15s ease;
+  position: relative;
+  word-break: break-word;
+}
+
+.schedule-table td:hover {
+  filter: brightness(0.97);
+}
+
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+}
+
+.activity-title {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.activity-title-xl {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.teacher-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* Lista da Rotina Matinal (6:00-7:00) */
+.routine-list {
+  list-style: none;
+  text-align: left;
+  padding-left: 2px;
+  font-size: 0.75rem;
+}
+
+.routine-list li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.routine-list li:last-child {
+  margin-bottom: 0;
+}
+
+.routine-list li::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+  font-weight: bold;
+  color: currentColor;
+}
+
+/* ==========================================================================
+   Estilização das Cores de Cada Categoria (Diferentes e Harmoniosas)
+   ========================================================================== */
+
+/* Biologia */
+.cell-biologia {
+  background-color: var(--bio-bg);
+  color: var(--bio-text);
+  border-color: var(--bio-border) !important;
+}
+
+/* Computadores / Hardware */
+.cell-computadores {
+  background-color: var(--comp-bg);
+  color: var(--comp-text);
+  border-color: var(--comp-border) !important;
+}
+
+/* Matemática */
+.cell-matematica {
+  background-color: var(--mat-bg);
+  color: var(--mat-text);
+  border-color: var(--mat-border) !important;
+}
+
+/* Redes */
+.cell-redes {
+  background-color: var(--redes-bg);
+  color: var(--redes-text);
+  border-color: var(--redes-border) !important;
+}
+
+/* Filosofia */
+.cell-filosofia {
+  background-color: var(--filo-bg);
+  color: var(--filo-text);
+  border-color: var(--filo-border) !important;
+}
+
+/* Química */
+.cell-quimica {
+  background-color: var(--quim-bg);
+  color: var(--quim-text);
+  border-color: var(--quim-border) !important;
+}
+
+/* Programação */
+.cell-prog {
+  background-color: var(--prog-bg);
+  color: var(--prog-text);
+  border-color: var(--prog-border) !important;
+}
+
+/* Português */
+.cell-portugues {
+  background-color: var(--port-bg);
+  color: var(--port-text);
+  border-color: var(--port-border) !important;
+}
+
+/* Autoria Web */
+.cell-autoria {
+  background-color: var(--auto-bg);
+  color: var(--auto-text);
+  border-color: var(--auto-border) !important;
+}
+
+/* História */
+.cell-historia {
+  background-color: var(--hist-bg);
+  color: var(--hist-text);
+  border-color: var(--hist-border) !important;
+}
+
+/* Natação / Esportes */
+.cell-sport {
+  background-color: var(--nat-bg);
+  color: var(--nat-text);
+  border-color: var(--nat-border) !important;
+}
+
+/* Rotina Matinal */
+.cell-routine {
+  background-color: var(--routine-bg);
+  color: var(--routine-text);
+  border-color: var(--routine-border) !important;
+}
+
+/* Intervalo */
+.cell-intervalo {
+  background-color: var(--interval-bg);
+  color: var(--interval-text);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.interval-row {
+  height: 28px;
+}
+
+/* Refeições */
+.cell-meal {
+  background-color: var(--meal-bg);
+  color: var(--meal-text);
+  border-color: var(--meal-border) !important;
+}
+
+/* Lazer */
+.cell-lazer {
+  background-color: var(--lazer-bg);
+  color: var(--lazer-text);
+  border-color: var(--lazer-border) !important;
+}
+
+/* Dormir */
+.cell-sleep {
+  background-color: var(--sleep-bg);
+  color: var(--sleep-text);
+  border-color: var(--sleep-border) !important;
+  font-weight: 500;
+}
+
+/* Acordar e café */
+.cell-morning {
+  background-color: var(--routine-bg);
+  color: var(--routine-text);
+  border-color: var(--routine-border) !important;
+}
+
+/* Estudos complementares */
+.cell-study {
+  background-color: var(--study-bg);
+  color: var(--study-text);
+  border-color: var(--study-border) !important;
+}
+
+.cell-study-alt {
+  background-color: var(--port-bg);
+  color: var(--port-text);
+  border-color: var(--port-border) !important;
+}
+
+/* Retorno para casa / Trânsito */
+.cell-transit {
+  background-color: var(--transit-bg);
+  color: var(--transit-text);
+  border-color: var(--transit-border) !important;
+}
+
+/* Jantar e folga à noite */
+.cell-leisure-evening {
+  background-color: #fef9c3;
+  color: #854d0e;
+  border-color: #fef08a !important;
+}
+
+/* Arrumar a mochila */
+.cell-night-prep {
+  background-color: #e0f2fe;
+  color: #075985;
+  border-color: #bae6fd !important;
+  font-size: 0.75rem;
+}
+
+/* Células vazias */
+.cell-empty {
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   Legenda no Rodapé
+   ========================================================================== */
+.schedule-legend {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.legend-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.legend-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.legend-biologia { background: var(--bio-bg); color: var(--bio-text); border-color: var(--bio-border); }
+.legend-computadores { background: var(--comp-bg); color: var(--comp-text); border-color: var(--comp-border); }
+.legend-matematica { background: var(--mat-bg); color: var(--mat-text); border-color: var(--mat-border); }
+.legend-redes { background: var(--redes-bg); color: var(--redes-text); border-color: var(--redes-border); }
+.legend-filosofia { background: var(--filo-bg); color: var(--filo-text); border-color: var(--filo-border); }
+.legend-quimica { background: var(--quim-bg); color: var(--quim-text); border-color: var(--quim-border); }
+.legend-prog { background: var(--prog-bg); color: var(--prog-text); border-color: var(--prog-border); }
+.legend-portugues { background: var(--port-bg); color: var(--port-text); border-color: var(--port-border); }
+.legend-autoria { background: var(--auto-bg); color: var(--auto-text); border-color: var(--auto-border); }
+.legend-historia { background: var(--hist-bg); color: var(--hist-text); border-color: var(--hist-border); }
+.legend-natacao { background: var(--nat-bg); color: var(--nat-text); border-color: var(--nat-border); }
+.legend-rotina { background: var(--routine-bg); color: var(--routine-text); border-color: var(--routine-border); }
+.legend-refeicao { background: var(--meal-bg); color: var(--meal-text); border-color: var(--meal-border); }
+.legend-lazer { background: var(--lazer-bg); color: var(--lazer-text); border-color: var(--lazer-border); }
+
+/* ==========================================================================
+   Modo de Impressão (Print)
+   ========================================================================== */
+@media print {
+  @page {
+    size: landscape;
+    margin: 6mm;
+  }
+
+  body {
+    background: #ffffff;
+    padding: 0;
+  }
+  
+  .page-container {
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .schedule-table {
+    font-size: 7.5pt;
+  }
+
+  .main-title-bar h1 {
+    font-size: 14pt;
+  }
+
+  .student-name {
+    font-size: 9pt;
+  }
+
+  .schedule-table thead th,
+  .schedule-table tbody th.time-col {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .schedule-table td {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
