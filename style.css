@@ -15,56 +15,56 @@
   --border-table: #cbd5e1;
   --border-cell: #e2e8f0;
   
-  /* Cores Harmoniosas para Atividades e Disciplinas */
-  /* Biologia */
-  --bio-bg: #dcfce7;
-  --bio-border: #86efac;
-  --bio-text: #14532d;
+  /* Cores Harmoniosas para Atividades e Disciplinas - TSI 2026.2 */
+  /* POO (Tatiana Sorrentino) */
+  --poo-bg: #ede9fe;
+  --poo-border: #c4b5fd;
+  --poo-text: #4c1d95;
 
-  /* Org. e Manut. Computadores */
-  --comp-bg: #f1f5f9;
-  --comp-border: #cbd5e1;
-  --comp-text: #1e293b;
+  /* Leitura e Produção de Textos (Jose Diego) */
+  --textos-bg: #fee2e2;
+  --textos-border: #fca5a5;
+  --textos-text: #991b1b;
 
-  /* Matemática */
-  --mat-bg: #fef3c7;
-  --mat-border: #fde047;
-  --mat-text: #854d0e;
+  /* Ap. Redes Comp. (Helber Silva - Online) */
+  --redes-bg: #e0e7ff;
+  --redes-border: #a5b4fc;
+  --redes-text: #3730a3;
 
-  /* Redes de Computadores */
-  --redes-bg: #ede9fe;
-  --redes-border: #c4b5fd;
-  --redes-text: #4c1d95;
+  /* Web Design (Eberton Marinho - Online) */
+  --webdesign-bg: #ccfbf1;
+  --webdesign-border: #5eead4;
+  --webdesign-text: #0f766e;
 
-  /* Filosofia */
+  /* Banco de Dados (Fabio Fernandes) */
+  --bd-bg: #dcfce7;
+  --bd-border: #86efac;
+  --bd-text: #166534;
+
+  /* SO Abertos (Emerson Sales) */
+  --so-bg: #ffedd5;
+  --so-border: #fdba74;
+  --so-text: #9a3412;
+
+  /* Filosofia, Ciência e Tecnologia (Angela Lima Calou) */
   --filo-bg: #fce7f3;
   --filo-border: #fbcfe8;
   --filo-text: #831843;
 
-  /* Química */
-  --quim-bg: #e0f2fe;
-  --quim-border: #7dd3fc;
-  --quim-text: #0369a1;
+  /* Introdução à Extensão (Brisa Svadechi) */
+  --ext-bg: #e0f2fe;
+  --ext-border: #7dd3fc;
+  --ext-text: #0369a1;
 
-  /* Prog. com BD */
-  --prog-bg: #dbeafe;
-  --prog-border: #93c5fd;
-  --prog-text: #1e40af;
+  /* Des Web Front-end (Eberton Marinho) */
+  --frontend-bg: #dbeafe;
+  --frontend-border: #93c5fd;
+  --frontend-text: #1e40af;
 
-  /* Língua Portuguesa */
-  --port-bg: #fee2e2;
-  --port-border: #fca5a5;
-  --port-text: #991b1b;
-
-  /* Autoria Web */
-  --auto-bg: #ffedd5;
-  --auto-border: #fdba74;
-  --auto-text: #9a3412;
-
-  /* História */
-  --hist-bg: #fef08a;
-  --hist-border: #facc15;
-  --hist-text: #713f12;
+  /* Horário Livre / Sem Aula (----) */
+  --free-bg: #f8fafc;
+  --free-border: #cbd5e1;
+  --free-text: #64748b;
 
   /* Natação */
   --nat-bg: #ccfbf1;
@@ -384,74 +384,75 @@ body {
    Estilização das Cores de Cada Categoria (Diferentes e Harmoniosas)
    ========================================================================== */
 
-/* Biologia */
-.cell-biologia {
-  background-color: var(--bio-bg);
-  color: var(--bio-text);
-  border-color: var(--bio-border) !important;
+/* POO (Programação Orientada a Objetos) */
+.cell-poo {
+  background-color: var(--poo-bg);
+  color: var(--poo-text);
+  border-color: var(--poo-border) !important;
 }
 
-/* Computadores / Hardware */
-.cell-computadores {
-  background-color: var(--comp-bg);
-  color: var(--comp-text);
-  border-color: var(--comp-border) !important;
+/* Leitura e Produção de Textos */
+.cell-textos {
+  background-color: var(--textos-bg);
+  color: var(--textos-text);
+  border-color: var(--textos-border) !important;
 }
 
-/* Matemática */
-.cell-matematica {
-  background-color: var(--mat-bg);
-  color: var(--mat-text);
-  border-color: var(--mat-border) !important;
-}
-
-/* Redes */
+/* Redes / Ap. Redes Comp. */
 .cell-redes {
   background-color: var(--redes-bg);
   color: var(--redes-text);
   border-color: var(--redes-border) !important;
 }
 
-/* Filosofia */
+/* Web Design */
+.cell-webdesign {
+  background-color: var(--webdesign-bg);
+  color: var(--webdesign-text);
+  border-color: var(--webdesign-border) !important;
+}
+
+/* Banco de Dados */
+.cell-bd {
+  background-color: var(--bd-bg);
+  color: var(--bd-text);
+  border-color: var(--bd-border) !important;
+}
+
+/* SO Abertos */
+.cell-so {
+  background-color: var(--so-bg);
+  color: var(--so-text);
+  border-color: var(--so-border) !important;
+}
+
+/* Filosofia, Ciência e Tecnologia */
 .cell-filosofia {
   background-color: var(--filo-bg);
   color: var(--filo-text);
   border-color: var(--filo-border) !important;
 }
 
-/* Química */
-.cell-quimica {
-  background-color: var(--quim-bg);
-  color: var(--quim-text);
-  border-color: var(--quim-border) !important;
+/* Introdução à Extensão */
+.cell-extensao {
+  background-color: var(--ext-bg);
+  color: var(--ext-text);
+  border-color: var(--ext-border) !important;
 }
 
-/* Programação */
-.cell-prog {
-  background-color: var(--prog-bg);
-  color: var(--prog-text);
-  border-color: var(--prog-border) !important;
+/* Desenvolvimento Web Front-end */
+.cell-frontend {
+  background-color: var(--frontend-bg);
+  color: var(--frontend-text);
+  border-color: var(--frontend-border) !important;
 }
 
-/* Português */
-.cell-portugues {
-  background-color: var(--port-bg);
-  color: var(--port-text);
-  border-color: var(--port-border) !important;
-}
-
-/* Autoria Web */
-.cell-autoria {
-  background-color: var(--auto-bg);
-  color: var(--auto-text);
-  border-color: var(--auto-border) !important;
-}
-
-/* História */
-.cell-historia {
-  background-color: var(--hist-bg);
-  color: var(--hist-text);
-  border-color: var(--hist-border) !important;
+/* Horário Livre / Sem Aula (----) */
+.cell-free {
+  background-color: var(--free-bg);
+  color: var(--free-text);
+  border-color: var(--free-border) !important;
+  font-style: italic;
 }
 
 /* Natação / Esportes */
@@ -459,6 +460,66 @@ body {
   background-color: var(--nat-bg);
   color: var(--nat-text);
   border-color: var(--nat-border) !important;
+}
+
+/* Estilos de Destaque para Aulas Online (Quarta-feira) */
+.cell-online {
+  box-shadow: inset 0 0 0 2px rgba(2, 132, 199, 0.4);
+  position: relative;
+}
+
+.badge-online {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: #0284c7;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.badge-optativa {
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.badge-online-pill {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: #38bdf8;
+  color: #0c4a6e;
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin: 3px auto 0 auto;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cell-intervalo-online {
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.cell-routine-online {
+  background-color: #f0f9ff;
+  border-color: #bae6fd !important;
+}
+
+.cell-meal-home {
+  background-color: #fefce8;
+}
+
+.cell-night-online {
+  background-color: #f0f9ff;
+  border-color: #7dd3fc !important;
 }
 
 /* Rotina Matinal */
@@ -582,20 +643,21 @@ body {
   border: 1px solid transparent;
 }
 
-.legend-biologia { background: var(--bio-bg); color: var(--bio-text); border-color: var(--bio-border); }
-.legend-computadores { background: var(--comp-bg); color: var(--comp-text); border-color: var(--comp-border); }
-.legend-matematica { background: var(--mat-bg); color: var(--mat-text); border-color: var(--mat-border); }
+.legend-poo { background: var(--poo-bg); color: var(--poo-text); border-color: var(--poo-border); }
+.legend-textos { background: var(--textos-bg); color: var(--textos-text); border-color: var(--textos-border); }
 .legend-redes { background: var(--redes-bg); color: var(--redes-text); border-color: var(--redes-border); }
+.legend-webdesign { background: var(--webdesign-bg); color: var(--webdesign-text); border-color: var(--webdesign-border); }
+.legend-bd { background: var(--bd-bg); color: var(--bd-text); border-color: var(--bd-border); }
+.legend-so { background: var(--so-bg); color: var(--so-text); border-color: var(--so-border); }
 .legend-filosofia { background: var(--filo-bg); color: var(--filo-text); border-color: var(--filo-border); }
-.legend-quimica { background: var(--quim-bg); color: var(--quim-text); border-color: var(--quim-border); }
-.legend-prog { background: var(--prog-bg); color: var(--prog-text); border-color: var(--prog-border); }
-.legend-portugues { background: var(--port-bg); color: var(--port-text); border-color: var(--port-border); }
-.legend-autoria { background: var(--auto-bg); color: var(--auto-text); border-color: var(--auto-border); }
-.legend-historia { background: var(--hist-bg); color: var(--hist-text); border-color: var(--hist-border); }
+.legend-extensao { background: var(--ext-bg); color: var(--ext-text); border-color: var(--ext-border); }
+.legend-frontend { background: var(--frontend-bg); color: var(--frontend-text); border-color: var(--frontend-border); }
+.legend-free { background: var(--free-bg); color: var(--free-text); border-color: var(--free-border); }
 .legend-natacao { background: var(--nat-bg); color: var(--nat-text); border-color: var(--nat-border); }
 .legend-rotina { background: var(--routine-bg); color: var(--routine-text); border-color: var(--routine-border); }
 .legend-refeicao { background: var(--meal-bg); color: var(--meal-text); border-color: var(--meal-border); }
 .legend-lazer { background: var(--lazer-bg); color: var(--lazer-text); border-color: var(--lazer-border); }
+.legend-online { background: #0284c7; color: #ffffff; border-color: #0369a1; }
 
 /* ==========================================================================
    Modo de Impressão (Print)
